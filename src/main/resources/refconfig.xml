@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:p="http://www.springframework.org/schema/p">
+
+
+    <bean name="aref" class="ref.A">
+        <property name="x" value="23"></property>
+    </bean>
+
+
+<!--    <bean name="bref" class="ref.B">-->
+<!--        <property name="y" value="299" ></property>-->
+<!--        <property name="a" ref="aref" ></property>-->
+<!--   </bean>-->
+
+
+    <bean name="bref" class="ref.B" p:y="299" p:a-ref="aref">
+    </bean>
+
+</beans>

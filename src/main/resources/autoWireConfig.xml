@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--using spring config XML auto wire -->
+
+<!--<bean class="autoWire.B" name="aaa" p:b="134">-->
+<!--</bean>-->
+
+<!--    by name autowire-->
+<!--    when we autowire by name it goes to respective class A then check if therre is any other object get it name and check config file it matches name of any bena that have name same with gett name of clkass inject it -->
+<!--    for by name refernce varable in a class should be same as bean id in config file-->
+<!--    <bean class="autoWire.A" name ="emp1" autowire="byName">-->
+
+<!--    </bean>-->
+
+<!--    by type only check if there is any bean with type refernce we provide no name matching same require  but what if two beans of smae type so have to use by name -->
+
+<!--    <bean class="autoWire.A" name ="emp1" autowire="byType">-->
+<!--    </bean>-->
+
+
+<!--    using annotations autowiring   now worries of name chaniging -->
+
+    <context:annotation-config/>
+
+    <bean class="autoWire.annotations.B" name="aaa" p:b="134">
+    </bean>
+<!--        <bean class="autoWire.annotations.A" name ="emp1" >-->
+<!--        </bean>-->
+
+    <bean class="autoWire.annotations.B" name="aasaa" p:b="124">
+    </bean>
+    <bean class="autoWire.annotations.A" name ="emp1" >
+    </bean>
+
+<!--when there is two beans and we use annotation auto wired it will give error then go to class and use @Qualifier("bean id") to specify which bean to use-->
+
+</beans>
